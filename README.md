@@ -1,2 +1,1 @@
-# flask-project-template
-template project lask
+template for flask project

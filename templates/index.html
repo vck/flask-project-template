@@ -1,7 +1,61 @@
 {% include "base.html" %}
+<script type="text/javascript" scr="{{url_for('static', filename='js/Chart.js')}}"></script>
+{%if result%}
 
-{%for i in data%}
+
 <div class="container">
-	<h1>{{i}}</h1>
+  <h3>HASIL</h3>
+  <h3>Kemungkinan kanker: {{result[1]}}%</h3>
+  <h3>Kemungkinan tidak kanker: {{result[0]}}%</h3>
+
+  <a class="btn btn-default" href="/">ulangi?</a>
 </div>
-{%endfor%}
+
+{%else%}
+
+
+
+<div class="container">
+
+	<form class="" action="/api/predict" method="post">
+      <div class="container">
+        <h3>Umur</h3>
+        <input type="text" name="param1" placeholder="" required="true">
+      </div>
+
+      <div class="container">
+        <h3>Banyak pasangan</h3>
+        <input type="text" name="param2" placeholder="banyak pasangan" required="true">
+      </div>
+
+      <div class="container">
+        <h3>Berapa kali hamil</h3>
+        <input type="text" name="param3" placeholder="berapa kali hamil" required="true">
+      </div>
+
+      <div class="container">
+        <h3>Merokok</h3>
+        <div class="radio">
+          <label for=""><input type="radio" name="smokes" value="">Ya</label>
+        </div>
+        <div class="radio">
+          <label><input type="radio" name="no_smokes" value="">Tidak</label>
+        </div>
+      </div>
+
+    <div class="container">
+      <h3>Kontrasepsi Hormon</h3>
+      <div class="radio">
+        <label for=""><input type="radio" name="contraception" value="">Ya</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="no_contraception" value="">Tidak</label>
+      </div>
+    </div>
+			<input type="text" name="param4" placeholder="merokok" required="true">
+			<input type="text" name="param5" placeholder="kontrasepsi hormon" required="true">
+			<input class="btn btn-default" type="submit" name="submit" placeholder="Predict" required="true"	>
+    </form>
+</div>
+
+{%endif%}

@@ -1,0 +1,43 @@
+nav{
+  padding-bottom: 40px;
+}
+
+mark.head{
+  background-color: #FB23DC;
+}
+
+
+h2.name{
+  font-weight: bolder;
+}
+
+h3.school {
+  font-weight: bolder;
+}
+
+
+a{
+  color: #2ebda4;
+}
+
+links{
+  padding-bottom: 20px;
+}
+
+body {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background: none;
+}
+
+.white {
+	color: #ffffff !important;
+}
+
+.full {
+  background-color: #ffffff;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
